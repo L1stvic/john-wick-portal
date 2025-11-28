@@ -1,0 +1,82 @@
+/* Rules Access */
+.rules-container {
+  max-width: 896px;
+  margin: 0 auto;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.rule-item {
+  border-left: 2px solid var(--accent-active);
+  padding-left: 24px;
+  animation: slide-in 0.5s both;
+}
+
+.rule-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.rule-number {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent-active);
+  background: rgba(139, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rule-title {
+  font-size: 1.125rem;
+  letter-spacing: 0.2em;
+}
+
+.rule-text {
+  margin-bottom: 8px;
+}
+
+.rule-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.rules-divider {
+  height: 1px;
+  background: rgba(139, 0, 0, 0.3);
+  margin: 48px 0;
+}
+
+.rules-lore {
+  text-align: center;
+  animation: lore-fade 1s 1.5s both;
+}
+
+.rules-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--text-inactive);
+  margin: 0 auto 24px;
+}
+
+.rules-quote {
+  color: var(--text-secondary);
+  font-style: italic;
+  max-width: 672px;
+  margin: 0 auto 24px;
+  line-height: 1.8;
+}
+
+.rules-signature {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--text-inactive);
+}

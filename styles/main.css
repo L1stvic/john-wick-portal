@@ -1,0 +1,178 @@
+/* Базовые стили и сброс */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0a0a0a;
+  --accent-active: #8b0000;
+  --text-primary: #c0a050;
+  --text-secondary: rgba(192, 160, 80, 0.6);
+  --text-inactive: rgba(192, 160, 80, 0.4);
+  --border-color: rgba(192, 160, 80, 0.3);
+  --panel-bg: rgba(10, 10, 10, 0.8);
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Фоновое изображение */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url("https://images.unsplash.com/photo-1489599809505-f2d4c65055d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(8px);
+  opacity: 0.3;
+}
+
+/* Навигационная панель */
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.nav-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-tab {
+  padding: 24px 32px;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-tab:hover {
+  color: var(--text-primary);
+  background: rgba(139, 0, 0, 0.05);
+}
+
+.nav-tab.active {
+  color: var(--accent-active);
+}
+
+.nav-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-active);
+  animation: tab-slide 0.3s ease-out;
+}
+
+/* Основной контент */
+.main-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  min-height: 600px;
+}
+
+.tab-content {
+  display: none;
+  animation: tab-content 0.4s ease-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Общие стили для секций */
+.section-title {
+  font-size: 2.25rem;
+  letter-spacing: 0.4em;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent-active),
+    transparent
+  );
+}
+
+.section-title::before {
+  left: 0;
+  animation: expand 1s ease-out;
+}
+
+.section-title::after {
+  right: 0;
+  animation: expand 1s 0.2s ease-out;
+}
+
+.section-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  padding: 32px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .nav-content {
+    justify-content: space-around;
+  }
+
+  .nav-tab {
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .main-content {
+    padding: 40px 16px;
+  }
+}

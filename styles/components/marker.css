@@ -1,0 +1,295 @@
+/* Blood Oath Marker */
+.blood-oath-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.marker-container {
+  width: 256px;
+  height: 256px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.marker-container:hover {
+  transform: scale(1.05);
+}
+
+.marker-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #1a1a1a, var(--bg-primary));
+  border: 1px solid rgba(192, 160, 80, 0.3);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 0.6s ease-out;
+}
+
+.marker-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #2a2a2a, #1a1a1a);
+  border: 2px solid rgba(192, 160, 80, 0.6);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s, box-shadow 0.6s;
+  transition-delay: 0ms;
+}
+
+.marker-outer-circle {
+  width: 160px;
+  height: 160px;
+  border: 2px solid var(--accent-active);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.marker-cross {
+  width: 96px;
+  height: 96px;
+  position: relative;
+}
+
+.marker-line-vertical,
+.marker-line-horizontal {
+  position: absolute;
+  background: var(--accent-active);
+}
+
+.marker-line-vertical {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.marker-line-horizontal {
+  height: 1px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.marker-center {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--accent-active);
+  border-radius: 50%;
+  background: var(--bg-primary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker-hell-text {
+  font-size: 8px;
+  font-weight: bold;
+  color: var(--accent-active);
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s, transform 0.5s;
+  transition-delay: 0ms;
+}
+
+.marker-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-active);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.marker-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(139, 0, 0, 0.3), inset 0 0 60px rgba(139, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.marker-form {
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(192, 160, 80, 0.3);
+  padding: 24px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: 0.5em;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent-active);
+}
+
+.form-input::placeholder {
+  color: rgba(192, 160, 80, 0.2);
+}
+
+.error-message {
+  font-size: 0.75rem;
+  color: var(--accent-active);
+  letter-spacing: 0.2em;
+  margin-top: 8px;
+  animation: error-shake 0.4s;
+}
+
+.hint-text {
+  font-size: 0.75rem;
+  color: var(--text-inactive);
+  font-style: italic;
+  margin-top: 16px;
+  animation: hint-fade-in 1s 0.5s both;
+}
+
+/* Unlocked State */
+.unlocked-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.success-marker {
+  width: 128px;
+  height: 128px;
+  border: 2px solid var(--accent-active);
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgba(139, 0, 0, 0.1), transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: marker-pulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+.success-marker-inner {
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--accent-active);
+  border-radius: 50%;
+}
+
+.smoke-particle {
+  width: 8px;
+  height: 8px;
+  background: rgba(139, 0, 0, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+}
+
+.access-granted {
+  text-align: center;
+  animation: access-granted 0.6s 0.3s both;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  width: 100%;
+  max-width: 800px;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-card {
+  border: 1px solid rgba(192, 160, 80, 0.3);
+  padding: 32px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.contact-card-left {
+  animation: contact-slide-left 0.6s 0.6s both;
+}
+
+.contact-card-right {
+  animation: contact-slide-right 0.6s 0.8s both;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary);
+}
+
+.contact-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+}
+
+.contact-value {
+  font-size: 1.875rem;
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+}
+
+.contact-address {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.welcome-message {
+  text-align: center;
+  animation: welcome-fade 0.5s 1.5s both;
+}

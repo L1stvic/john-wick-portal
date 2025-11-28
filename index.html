@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Джон Уик - Цифровой портал Высшего стола</title>
+
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+
+    <!-- Стили компонентов -->
+    <link rel="stylesheet" href="styles/components/hero.css" />
+    <link rel="stylesheet" href="styles/components/marker.css" />
+    <link rel="stylesheet" href="styles/components/dossier.css" />
+    <link rel="stylesheet" href="styles/components/gallery.css" />
+    <link rel="stylesheet" href="styles/components/contact.css" />
+    <link rel="stylesheet" href="styles/components/rules.css" />
+  </head>
+  <body>
+    <!-- Фоновое изображение -->
+    <div class="background-image"></div>
+
+    <!-- Навигационная панель -->
+    <nav class="nav-container">
+      <div class="nav-content">
+        <button class="nav-tab active" data-tab="marker">КРОВАВАЯ МЕТКА</button>
+        <button class="nav-tab" data-tab="dossier">ДОСЬЕ</button>
+        <button class="nav-tab" data-tab="gallery">ГАЛЕРЕЯ</button>
+        <button class="nav-tab" data-tab="contact">КОНТАКТ</button>
+        <button class="nav-tab" data-tab="rules">ПРАВИЛА</button>
+      </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-image-container">
+          <img
+            src="https://images.unsplash.com/photo-1489599809505-f2d4c65055d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="John Wick"
+            class="hero-image"
+          />
+          <div class="hero-overlay"></div>
+        </div>
+        <div class="lightning-flash"></div>
+        <div class="lightning-detail"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">ДЖОН УИК</h1>
+          <div class="hero-divider"></div>
+          <p class="hero-subtitle">ЦИФРОВОЙ ПОРТАЛ ВЫСШЕГО СТОЛА</p>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- Blood Oath Marker -->
+      <section id="marker" class="tab-content active">
+        <!-- Содержимое будет добавлено через JavaScript -->
+      </section>
+
+      <!-- Specialization Dossier -->
+      <section id="dossier" class="tab-content">
+        <!-- Содержимое будет добавлено через JavaScript -->
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="tab-content">
+        <!-- Содержимое будет добавлено через JavaScript -->
+      </section>
+
+      <!-- Contact Request -->
+      <section id="contact" class="tab-content">
+        <!-- Содержимое будет добавлено через JavaScript -->
+      </section>
+
+      <!-- Rules Access -->
+      <section id="rules" class="tab-content">
+        <!-- Содержимое будет добавлено через JavaScript -->
+      </section>
+    </main>
+
+    <!-- Lightbox для галереи -->
+    <div id="lightbox" class="lightbox">
+      <button class="lightbox-close" id="lightbox-close">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div class="lightbox-content">
+        <img id="lightbox-image" class="lightbox-image" src="" alt="" />
+        <div class="lightbox-info">
+          <p id="lightbox-category" class="gallery-category"></p>
+          <h3 id="lightbox-title" class="gallery-title"></h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="js/utils.js"></script>
+    <script src="js/components/navigation.js"></script>
+    <script src="js/components/hero.js"></script>
+    <script src="js/components/marker.js"></script>
+    <script src="js/components/dossier.js"></script>
+    <script src="js/components/gallery.js"></script>
+    <script src="js/components/contact.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
